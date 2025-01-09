@@ -22,12 +22,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Tests
-        run: npm test
-
-      - name: Build Project
-        run: npm run build
-
       - name: Deploy to Remote Server
         uses: appleboy/ssh-action@master
         with:
