@@ -3,7 +3,7 @@ name: Deploy DumpMail - Haraka
 on:
   push:
     branches:
-      - main  # Change this if needed
+      - main
 
 jobs:
   deploy:
