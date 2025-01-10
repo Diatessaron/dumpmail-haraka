@@ -4,9 +4,10 @@ const path = require("path");
 const { extensions } = require("./extensions");
 require('dotenv').config();
 
+const redisUrl = new URL(process.env.REDIS_URL || 'redis://localhost:6379');
 let redis = new Redis({
-    host: process.env.REDIS_HOST || 'localhost',
-    port: process.env.REDIS_PORT || 6379,
+    host: redisUrl.hostname,
+    port: Number(redisUrl.port),
     username: process.env.REDIS_USER,
     password: process.env.REDIS_PASSWORD,
     lazyConnect: true
