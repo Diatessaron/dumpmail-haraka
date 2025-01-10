@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /${{ secrets.SERVER_USER }}/dumpmail-haraka
+            cd /opt/${{ secrets.SERVER_USER }}/dumpmail-haraka
             git pull origin main
             npm install
             systemctl restart haraka
